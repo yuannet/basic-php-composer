@@ -65,3 +65,8 @@ stages:
       name: $(environmentName)
       resourceType: VirtualMachine
       tags: $(tagName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - script: echo my first deployment
