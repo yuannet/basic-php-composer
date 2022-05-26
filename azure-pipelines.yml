@@ -64,7 +64,6 @@ stages:
     environment:
       name: landfinancehub
       resourceType: VirtualMachine
-      tag: web
     strategy:
       rolling:
         maxParallel: 5  #for percentages, mention as x%
