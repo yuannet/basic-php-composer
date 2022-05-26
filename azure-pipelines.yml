@@ -62,8 +62,9 @@ stages:
   - deployment: VMDeploy
     displayName: web
     environment:
-      name: $(environmentName)
+      name: landfinancehub
       resourceType: VirtualMachine
+      tag: web
     strategy:
       rolling:
         maxParallel: 5  #for percentages, mention as x%
