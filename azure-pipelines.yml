@@ -55,7 +55,7 @@ stages:
       artifact: drop
 
 - stage: Deploy
-  displayName: 'Deploy Web App'
+  displayName: 'Deploy Web App on Virtual Machine'
   dependsOn: Build
   condition: succeeded()
   jobs:  
@@ -64,7 +64,6 @@ stages:
     environment:
       name: $(environmentName)
       resourceType: VirtualMachine
-      tags: $(tagName)
     strategy:
       rolling:
         maxParallel: 5  #for percentages, mention as x%
