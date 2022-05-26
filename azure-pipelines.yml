@@ -57,8 +57,6 @@ stages:
   condition: succeeded()
   jobs:
   - deployment: DeploymentJob
-    pool:
-      vmImage: $(vmImageName)
     environment: 
       name: $(environmentName)
       resourceType: VirtualMachine
