@@ -60,3 +60,15 @@ stages:
     pool:
       vmImage: $(vmImageName)
     environment: $(environmentName)
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureWebApp@1
+            displayName: 'Deploy Azure Web App : {{ webAppName }}'
+            inputs:
+              azureSubscription: $(azureSubscription)
+              environment: 
+                name:  $(environmentName)
+                resourceType: VirtualMachine
+              package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
