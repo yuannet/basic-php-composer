@@ -16,3 +16,6 @@ steps:
 
 - script: composer install --no-interaction --prefer-dist
   displayName: 'composer install'
+
+- publish: $(System.DefaultWorkingDirectory)/bin/WebApp
+  artifact: WebApp
