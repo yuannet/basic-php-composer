@@ -27,6 +27,14 @@ steps:
   displayName: 'Use PHP version $(phpVersion)'
 
 
+- deployment: VMDeploy
+  displayName: web
+  environment:
+    name: landfinancehub
+    resourceType: VirtualMachine
+    tags: landfinancehub
+
+
 
 
 
